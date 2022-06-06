@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.junit.Assert.assertEquals;
 
 public class CalculatorSteps {
-    @Autowired
-    Calculator calculator;
+    Calculator calculator = new Calculator();
 
     @When("add {int} and {int}")
     public void add(int a, int b) {

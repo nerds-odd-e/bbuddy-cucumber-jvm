@@ -11,7 +11,7 @@ public class CalculatorSteps {
     Calculator calculator;
 
     @When("add {int} and {int}")
-    public void add_and(int a, int b) {
+    public void add(int a, int b) {
         calculator.add(a, b);
     }
 
@@ -21,7 +21,7 @@ public class CalculatorSteps {
     }
 
     @When("subtract {int} from {int}")
-    public void subtract_from(int a, int b) {
+    public void subtract(int a, int b) {
         calculator.subtract(b, a);
     }
 }

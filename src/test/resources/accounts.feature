@@ -1,3 +1,4 @@
+@login
 Feature: Accounts
   Scenario: add account
     When add account as name "CMB" and balance 1000

@@ -19,9 +19,6 @@ public class AccountsSteps {
     @Autowired
     private AccountsClient accountsClient;
 
-    @Autowired
-    private UsersClient usersClient;
-
     @DataTableType
     public Account accountEntry(Map<String, String> entry) {
         return new Account(
@@ -31,9 +28,6 @@ public class AccountsSteps {
 
     @When("add account as name {string} and balance {int}")
     public void add_account_as_name_and_balance(String name, Integer amount) {
-        Response response = usersClient.signIn(new User("zbcjackson@gmail.com", "password"));
-        String authorization = response.headers().get("Authorization").stream().findFirst().get();
-        Config.Feign.authorization = authorization;
         accountsClient.addAccount(new Account(name, amount));
     }
     @Then("you will see all accounts as below")

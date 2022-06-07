@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "accountsClient", url = "http://localhost:4000")
+@FeignClient(name = "accountsClient", url = "${api.url}")
 public interface AccountsClient {
     @PostMapping("/accounts")
     @Headers("Content-Type: application/json")

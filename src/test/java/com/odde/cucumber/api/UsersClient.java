@@ -5,7 +5,7 @@ import feign.Response;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(name = "usersClient", url = "http://localhost:4000")
+@FeignClient(name = "usersClient", url = "${api.url}")
 public interface UsersClient {
 
     @PostMapping("/users/signup")

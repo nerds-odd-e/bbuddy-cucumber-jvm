@@ -1,4 +1,4 @@
-package com.odde.cucumber;
+package com.odde.cucumber.api.dto;
 
 public class Account {
     private String name;

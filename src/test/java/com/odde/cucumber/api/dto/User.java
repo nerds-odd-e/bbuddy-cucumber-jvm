@@ -1,4 +1,4 @@
-package com.odde.cucumber;
+package com.odde.cucumber.api.dto;
 
 public class User {
     private String email;

@@ -1,5 +1,6 @@
-package com.odde.cucumber;
+package com.odde.cucumber.api;
 
+import com.odde.cucumber.api.dto.Account;
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

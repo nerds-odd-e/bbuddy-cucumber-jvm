@@ -1,5 +1,9 @@
 package com.odde.cucumber;
 
+import com.odde.cucumber.api.dto.Account;
+import com.odde.cucumber.api.AccountsClient;
+import com.odde.cucumber.api.dto.User;
+import com.odde.cucumber.api.UsersClient;
 import feign.Response;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Then;

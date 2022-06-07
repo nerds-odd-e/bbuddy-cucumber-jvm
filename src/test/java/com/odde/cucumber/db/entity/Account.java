@@ -1,4 +1,4 @@
-package com.odde.cucumber.db;
+package com.odde.cucumber.db.entity;
 
 import javax.persistence.*;
 

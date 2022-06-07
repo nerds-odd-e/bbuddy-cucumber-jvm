@@ -4,6 +4,7 @@ import com.odde.cucumber.api.dto.Account;
 import com.odde.cucumber.api.AccountsClient;
 import com.odde.cucumber.api.dto.User;
 import com.odde.cucumber.api.UsersClient;
+import com.odde.cucumber.db.AccountRepository;
 import feign.Response;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Then;
@@ -21,6 +22,9 @@ public class AccountsSteps {
 
     @Autowired
     private UsersClient usersClient;
+
+    @Autowired
+    private AccountRepository accountRepository;
 
     @DataTableType
     public Account accountEntry(Map<String, String> entry) {
@@ -40,6 +44,7 @@ public class AccountsSteps {
     public void you_will_see_all_accounts_as_below(List<Account> expectedAccounts) {
         List<Account> accounts = accountsClient.getAccounts();
         assertEquals(expectedAccounts, accounts);
+        accountRepository.truncate();
         // Write code here that turns the phrase above into concrete actions
         // For automatic transformation, change DataTable to one of
         // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or

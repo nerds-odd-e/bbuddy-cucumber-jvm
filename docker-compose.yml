@@ -18,7 +18,7 @@ services:
   api:
     image: zbcjackson/bbuddy-java-api
     environment:
-      SPRING_PROFILES_ACTIVE: test
+      SPRING_PROFILES_ACTIVE: docker
     ports:
       - 8080:8080
       - 4000:4000

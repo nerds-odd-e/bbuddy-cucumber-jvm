@@ -4,6 +4,9 @@ public class Account {
     private String name;
     private Integer balance;
 
+    public Account() {
+    }
+
     public Account(String name, Integer balance) {
         this.name = name;
         this.balance = balance;
@@ -15,5 +18,11 @@ public class Account {
 
     public Integer getBalance() {
         return balance;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Account another = (Account)obj;
+        return name.equals(another.name) && balance.equals(another.balance);
     }
 }

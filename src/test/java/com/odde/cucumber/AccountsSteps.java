@@ -33,14 +33,14 @@ public class AccountsSteps {
 
     @When("add account as name {string} and balance {int}")
     public void add_account_as_name_and_balance(String name, Integer balance) {
-        navigation.accounts();
-        accountsPage.addAccount(new Account(name, balance));
-//        accountsClient.addAccount(new Account(name, balance));
+//        navigation.accounts();
+//        accountsPage.addAccount(new Account(name, balance));
+        accountsClient.addAccount(new Account(name, balance));
     }
 
     @Then("you will see all accounts as below")
     public void you_will_see_all_accounts_as_below(List<Account> expectedAccounts) {
-        accountsPage.checkAccount(expectedAccounts.get(0));
-//        assertEquals(expectedAccounts, accountsClient.getAccounts());
+//        accountsPage.checkAccount(expectedAccounts.get(0));
+        assertEquals(expectedAccounts, accountsClient.getAccounts());
     }
 }

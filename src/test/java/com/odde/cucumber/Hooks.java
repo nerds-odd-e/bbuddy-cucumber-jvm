@@ -36,7 +36,7 @@ public class Hooks {
         usersClient.signUp(new User("zbcjackson@gmail.com", "password"));
         loginPage.login("zbcjackson@gmail.com", "password");
         Response response = usersClient.signIn(new User("zbcjackson@gmail.com", "password"));
-        Config.Feign.authorization = response.headers().get("Authorization").stream().findFirst().get();
+        Feign.authorization = response.headers().get("Authorization").stream().findFirst().get();
     }
 
     @BeforeAll

@@ -2,6 +2,8 @@ package com.odde.cucumber;
 
 import com.odde.cucumber.api.AccountsClient;
 import com.odde.cucumber.api.dto.Account;
+import com.odde.cucumber.page.AccountsPage;
+import com.odde.cucumber.page.Navigation;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,6 +18,12 @@ public class AccountsSteps {
     @Autowired
     private AccountsClient accountsClient;
 
+    @Autowired
+    private AccountsPage accountsPage;
+
+    @Autowired
+    private Navigation navigation;
+
     @DataTableType
     public Account accountEntry(Map<String, String> entry) {
         return new Account(
@@ -24,12 +32,15 @@ public class AccountsSteps {
     }
 
     @When("add account as name {string} and balance {int}")
-    public void add_account_as_name_and_balance(String name, Integer amount) {
-        accountsClient.addAccount(new Account(name, amount));
+    public void add_account_as_name_and_balance(String name, Integer balance) {
+        navigation.accounts();
+        accountsPage.addAccount(new Account(name, balance));
+//        accountsClient.addAccount(new Account(name, balance));
     }
+
     @Then("you will see all accounts as below")
     public void you_will_see_all_accounts_as_below(List<Account> expectedAccounts) {
-        List<Account> accounts = accountsClient.getAccounts();
-        assertEquals(expectedAccounts, accounts);
+        accountsPage.checkAccount(expectedAccounts.get(0));
+//        assertEquals(expectedAccounts, accountsClient.getAccounts());
     }
 }

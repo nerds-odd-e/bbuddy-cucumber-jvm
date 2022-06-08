@@ -14,8 +14,12 @@ import org.springframework.http.codec.json.Jackson2JsonEncoder;
 
 @CucumberContextConfiguration
 @SpringBootTest
-@EnableFeignClients(basePackages = {"com.odde.cucumber"})
 public class Config {
+    @Configuration
+    @ComponentScan("com.odde.cucumber")
+    public static class Cucumber {}
+
+    @EnableFeignClients(basePackages = {"com.odde.cucumber"})
     @Configuration
     @EnableAutoConfiguration
     public static class Feign implements RequestInterceptor {

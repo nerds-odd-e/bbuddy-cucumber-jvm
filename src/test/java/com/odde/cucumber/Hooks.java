@@ -1,5 +1,6 @@
 package com.odde.cucumber;
 
+import com.odde.cucumber.api.Feign;
 import com.odde.cucumber.api.UsersClient;
 import com.odde.cucumber.api.dto.User;
 import com.odde.cucumber.db.AccountRepository;

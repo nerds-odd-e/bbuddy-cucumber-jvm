@@ -34,9 +34,9 @@ public class Hooks {
 
     @Before("@login")
     public void login() {
-        usersClient.signUp(new User("zbcjackson@gmail.com", "password"));
-        loginPage.login("zbcjackson@gmail.com", "password");
-        Response response = usersClient.signIn(new User("zbcjackson@gmail.com", "password"));
+        usersClient.signUp(new User("zbcjackson@odd-e.com", "password"));
+        loginPage.login("zbcjackson@odd-e.com", "password");
+        Response response = usersClient.signIn(new User("zbcjackson@odd-e.com", "password"));
         Feign.authorization = response.headers().get("Authorization").stream().findFirst().get();
     }
 

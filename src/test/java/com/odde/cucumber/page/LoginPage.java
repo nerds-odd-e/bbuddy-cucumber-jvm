@@ -15,4 +15,8 @@ public class LoginPage {
         ui.input("password", password);
         ui.click("login");
     }
+
+    public void checkErrorMessage(String message) {
+        ui.assertHaveText(message);
+    }
 }

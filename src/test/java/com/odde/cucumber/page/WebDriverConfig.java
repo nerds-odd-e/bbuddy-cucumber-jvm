@@ -9,10 +9,12 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class WebDriverConfig {
     @Bean
+    @Scope("webDriver")
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     @Primary
     public WebDriver firefoxDriver() {
@@ -20,6 +22,7 @@ public class WebDriverConfig {
     }
 
     @Bean
+    @Scope("webDriver")
     @ConditionalOnProperty(name = "browser", havingValue = "edge")
     @Primary
     public WebDriver edgeDriver() {
@@ -27,6 +30,7 @@ public class WebDriverConfig {
     }
 
     @Bean
+    @Scope("webDriver")
     @ConditionalOnMissingBean
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     @Primary

@@ -1,5 +1,6 @@
-package com.odde.cucumber;
+package com.odde.cucumber.step;
 
+import com.odde.cucumber.Calculator;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.odde.cucumber;
+package com.odde.cucumber.step;
 
 import com.odde.cucumber.api.UsersClient;
 import com.odde.cucumber.api.dto.User;

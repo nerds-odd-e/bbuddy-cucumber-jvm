@@ -1,13 +1,12 @@
 package com.odde.cucumber.step;
 
-import com.odde.cucumber.api.UsersClient;
+import com.odde.cucumber.api.client.UsersClient;
 import com.odde.cucumber.api.dto.User;
 import com.odde.cucumber.page.DashboardPage;
 import com.odde.cucumber.page.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class LoginSteps {

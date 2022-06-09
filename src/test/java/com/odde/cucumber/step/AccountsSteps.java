@@ -1,6 +1,6 @@
 package com.odde.cucumber.step;
 
-import com.odde.cucumber.api.AccountsClient;
+import com.odde.cucumber.api.client.AccountsClient;
 import com.odde.cucumber.api.dto.Account;
 import com.odde.cucumber.page.AccountsPage;
 import com.odde.cucumber.page.Navigation;

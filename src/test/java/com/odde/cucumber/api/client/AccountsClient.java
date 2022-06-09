@@ -1,4 +1,4 @@
-package com.odde.cucumber.api;
+package com.odde.cucumber.api.client;
 
 import com.odde.cucumber.api.dto.Account;
 import feign.Headers;

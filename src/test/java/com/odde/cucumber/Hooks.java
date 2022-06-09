@@ -1,12 +1,10 @@
 package com.odde.cucumber;
 
-import com.odde.cucumber.api.Feign;
-import com.odde.cucumber.api.client.UsersClient;
+import com.odde.cucumber.api.Api;
 import com.odde.cucumber.api.dto.User;
 import com.odde.cucumber.db.AccountRepository;
 import com.odde.cucumber.db.UserRepository;
 import com.odde.cucumber.page.LoginPage;
-import feign.Response;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,7 +19,7 @@ public class Hooks {
     private UserRepository userRepository;
 
     @Autowired
-    private UsersClient usersClient;
+    private Api api;
 
     @Autowired
     private LoginPage loginPage;
@@ -34,10 +32,9 @@ public class Hooks {
 
     @Before("@login")
     public void login() {
-        usersClient.signUp(new User("zbcjackson@odd-e.com", "password"));
+        api.signUp(new User("zbcjackson@odd-e.com", "password"));
         loginPage.login("zbcjackson@odd-e.com", "password");
-        Response response = usersClient.signIn(new User("zbcjackson@odd-e.com", "password"));
-        Feign.authorization = response.headers().get("Authorization").stream().findFirst().get();
+        api.signIn(new User("zbcjackson@odd-e.com", "password"));
     }
 
     @BeforeAll

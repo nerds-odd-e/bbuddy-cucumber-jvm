@@ -1,5 +1,6 @@
 package com.odde.cucumber.step;
 
+import com.odde.cucumber.api.Api;
 import com.odde.cucumber.api.client.AccountsClient;
 import com.odde.cucumber.api.dto.Account;
 import com.odde.cucumber.page.AccountsPage;
@@ -16,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 
 public class AccountsSteps {
     @Autowired
-    private AccountsClient accountsClient;
+    private Api api;
 
     @Autowired
     private AccountsPage accountsPage;
@@ -35,12 +36,12 @@ public class AccountsSteps {
     public void add_account_as_name_and_balance(String name, Integer balance) {
         navigation.accounts();
         accountsPage.addAccount(new Account(name, balance));
-//        accountsClient.addAccount(new Account(name, balance));
+//        api.addAccount(new Account(name, balance));
     }
 
     @Then("you will see all accounts as below")
     public void you_will_see_all_accounts_as_below(List<Account> expectedAccounts) {
         accountsPage.checkAccount(expectedAccounts.get(0));
-//        assertEquals(expectedAccounts, accountsClient.getAccounts());
+//        assertEquals(expectedAccounts, api.getAccounts());
     }
 }
